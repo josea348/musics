@@ -8,6 +8,15 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-    base: "https://josea348.github.io/musics",
+  base: "https://josea348.github.io/musics",
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4444',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 })
  
