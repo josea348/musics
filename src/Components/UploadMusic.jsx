@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+import { MdBrowserUpdated } from "react-icons/md";
+import { IoMdDownload } from "react-icons/io";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -85,7 +89,7 @@ export default function UploadMusic() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center p-4">
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-2xl shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4 text-center">🎵 Subir Música <edit /></h2>
 
@@ -149,10 +153,10 @@ export default function UploadMusic() {
                 <audio controls src={`api/music/${items.file}`} />
               </div>
               <div className='grid grid-cols-2'>
-                <button size="sm" color="primary" className="m-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Edit</button>
-                <button size="sm" color="danger" className="m-2 bg-red-600 text-white p-2 rounded hover:bg-red-700">Delete</button>
-                <button size="sm" color="danger" className="m-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Update</button>
-                <button size="sm" color="danger" className="m-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Download</button>
+                <button className="m-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700"><FaEdit /></button>
+                <button className="m-2 bg-red-600 text-white p-2 rounded hover:bg-red-700"><AiFillDelete /></button>
+                <button className="m-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700"><MdBrowserUpdated /></button>
+                <button className="m-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700"><IoMdDownload /></button>
                 {/* <button size="sm" color="primary" className="mx-2"><FaEdit /></button>
                 <button size="sm" color="danger" className="mx-2"><AiFillDelete /></button> */}
               </div>
